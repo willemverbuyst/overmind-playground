@@ -2,16 +2,21 @@ import { useAppState } from "../overmind";
 import Todo from "./Todo";
 
 const Todos = () => {
-  const state = useAppState();
+  const { todos } = useAppState();
 
-  return Object.keys(state.todos).length ? (
-    <ul>
-      {Object.keys(state.todos).map((id) => (
-        <Todo key={id} id={id} />
-      ))}
-    </ul>
-  ) : (
-    <p>nada</p>
+  return (
+    <>
+      <h2>All</h2>
+      {Object.keys(todos).length ? (
+        <ul style={{ listStyle: "none" }}>
+          {Object.keys(todos).map((id) => (
+            <Todo key={id} id={id} />
+          ))}
+        </ul>
+      ) : (
+        <p>no todos</p>
+      )}
+    </>
   );
 };
 
