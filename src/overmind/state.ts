@@ -25,7 +25,7 @@ export const state: State = {
     },
     c: {
       id: "c",
-      title: "bar",
+      title: "quux",
       completed: false,
     },
   },
